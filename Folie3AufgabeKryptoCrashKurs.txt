@@ -1,0 +1,9 @@
+Blockchiffre	AES DES
+Stromchiffre	ChaCha20
+Nachrichtenauthentisierung	HMAC POLY1305
+Verbindlichkeit	ECDSA
+Hashfunktion	SHA-256 
+Gleichzeitige Authentisierung und
+Verschlüsselung	GCM
+Schlüsselaustausch	DH	
+Generierung von Pseudozufallsfolgen	OFB	CTR
