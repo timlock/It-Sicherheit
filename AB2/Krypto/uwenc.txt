@@ -1,0 +1,5 @@
+Auftraggeber: Frau Ganzreich
+IBAN Auftraggeber: DE12 3456 7890 9876 5432 11
+Überweisungsbetrag: 0100100,00 EUR
+Empfaenger: Herr Rechtarm
+IBAN Empfaenger: DE88 8888 8888 5555 5555 44
