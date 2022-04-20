@@ -1,0 +1,26 @@
+Public Key Infrastruktur
+
+1.
+a)	Signaturen könnten rückwirkend gesperrt werden und übers Wochenende geschlossene gültige Verträge könnten widerufen werden.
+b) Alle Zeitstempel werden ungülitg. Angreifer könnte einen Zeitstempel zu einem beliebigen Zeitpunkt erstellen. Gegenmaßname: Archivierung ausgestellter Zeitstempel druch CA.
+
+2.
+	Fortgeschrittene elektronische Singatur: 
+		Signatur hängt vom Text ab. 
+		Gegenbeispiel eingescannte Unterschrift
+	Qualifiziertes Zertifikat:
+		Gegenbeispiel selbstsigniertes Zertifikat
+		Bedienung aus CA Identitätsprüfung, Schutz private Key
+	Sichere Signaturerstellungseinheit:
+		Gegenbeispiel Software Speicherung des private Key und Signierung auf PC
+		Bedienung geschützte Speicherung und Anwendung des private Key
+
+3.
+a) Trojaner liest private Key aus PC aus (Datei/RAM)
+	Vorteil: private Key sicher auf Chipkarte gespeichert und angewandt
+b) Angriff: Keyloger liest PIN bei PC-Eingabe mit , Angreifer könnte mit PIN über Schadsoftware Signaturerstellung auf Chipkarte auslösen
+	Vortel: sichere PIN Eingabe
+c) Angriff: Daten werden nach Anzeige auf PC vor Übertragung and die Chipkarte durch Schadsoftware manipuliert 
+	Vorteil: Sichere Anzeigekomponente
+	Idee Hashwert auf PC mit Chipkarten leser abgleichen -> unsicher, Schadsoftware könnte auf PC angezeigten Hashwert schon manipiliert haben
+	
