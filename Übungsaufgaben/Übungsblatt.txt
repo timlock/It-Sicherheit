@@ -1,0 +1,29 @@
+1. (Lösung lädt er hoch)
+2. Transport mode 
+3. Falls die Sequenznummer falsch/manipuliert ist, würde das Paket bei MAC-Prüfung sowieso verworfen, Sequenznummer-Prüfung erfordert weniger Aufwand. 
+4. DoS-Angriff: Einspielen Paket mit hoher Sequenznummer, Sequenznummer über MAC vorher prüfen, damit klar ist, dass die Sequenznummer nicht manipuliert wurde.
+	(Angreifer könnten eine zu hohe Sequenznummer senden um das Replay Fenster so weit zu verschieben, dass richtige Pakete nicht mehr akzeptiert werden, da ihre Sequenznummer zu niedrig ist)
+5. Authentisierung des führenden IP-Headers
+6.
+	a) IP-Adressen gehen nicht in die MAC Berechnung mit ein
+	b) 1. zusätlich Authentication Header, 2. ESP im Tunnel-Mode 
+7. 
+a) AH Transport, ESP Transport geht nicht, da der IP-Header mit der IP-Adresse vom Empfänger im Transport-Mode abgeschnitten wird (ESP muss im Tunnel-Mode verwendet werden)
+	AH Transport, ESP Tunnel geht
+	AH Tunnel, ESP Tunnel geht
+	AH Tunnel, ESP Transport geht nicht, da beim Empfänger Router an erster Stelle nicht der IP-Header steht sondern Authentication-Header
+8. 
+Bank
+-muss Homebanking Server vor ungeschützten Zugriffen schützen
+	-Firewall
+	-Betrieb im RZ, Berechnungen
+-Bank benötigt Extented Validaton Zertifikat für den Server
+-aktuelle TLS-Version verwenden
+-sichere Cipher Suite
+-private Key des Servers besonders schützen
+Benutzer
+-Browser Warnungen ernst nehmen
+-Browser prüft:
+	-Server Signatur(DH)
+	-Zertifikat Signaturen, Gültigkeit, gesperrt?
+	-Zertifikat für die entsprechende Internet Domäne ausgestellt?
