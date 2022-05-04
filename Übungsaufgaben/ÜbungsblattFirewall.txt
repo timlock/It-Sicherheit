@@ -1,0 +1,26 @@
+b)
+Nummer		NIC				IP-Source			IP destinaion			protocol					Source Port			Destination Port				Ack				Action
+1					1					extern					FTP-Server				 TCP						>1023						 21										any				permit
+2					2					FTP-Server 			extern						TCP							21							>1023									yes				permit
+3					2					FTP-Server			extern						TCP							20							>1023									any				permit
+4					1					extern					FTP-Server				TCP							>1023						20										yes 				permit
+5					3					intern					FTP-Server				TCP							>1023						21										any				permit
+6					2					FTP-Server			intern						TCP							21							>1023									yes				permit
+7					2					FTP-Server			intern						TCP							20							>1023									yes				permit
+8					3					intern					FTP-Server				TCP							>1023						20										any				permit
+9					3					intern					extern						TCP							>1023						21										any				permit
+10				1					extern					intern						TCP							21							>1023									yes				permit
+11				1					extern					intern						TCP							20							>1023									any				permit
+12				3					intern					extern						TCP							>1023						20										yes				permit
+13				any				any						any							any							any							any										any				deny
+
+c)
+Alle geraden Nummern können dynamisch ausgelegt werden, da diese Rückverbindungen sind.
+Außerdem können 3, 7 und 11 dynamisch gesetzt werden.
+
+-Weniger Regeln, weniger Konfiguartionsfehler
+-Generierte Regeln sind temporär
+-Generierte Regeln sind spezifischer 
+
+
+
