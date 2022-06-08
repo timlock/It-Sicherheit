@@ -1,0 +1,85 @@
+! Access-List INET_IN fuer Kommunikation vom Internet in die DMZ
+! Auf gi0/0 (Internet) des Internet-Routers eingehend filtern
+! Internet-Router
+no ip access-list extended INET_IN
+ip access-list extended INET_IN
+permit udp any any eq 520
+permit tcp any  any eq 443
+permit udp any any eq domain
+exit
+
+interface g0/0
+ip access-group INET_IN in
+exit
+
+ip inspect name INET_ALLOW tcp
+ip inspect name INET_ALLOW udp
+ip inspect name INET_ALLOW http
+ip inspect name INET_ALLOW icmp
+
+interface g0/0
+ip inspect INET_ALLOW out
+exit
+
+!R2
+no ip access-list extended DMZ_IN
+ip access-list extended DMZ_IN
+permit udp any any eq 520
+exit
+
+interface g0/0
+ip access-group DMZ_IN in
+exit
+
+ip inspect name DMZ_ALLOW tcp
+ip inspect name DMZ_ALLOW udp
+ip inspect name DMZ_ALLOW http
+ip inspect name DMZ_ALLOW icmp
+
+interface g0/0
+ip inspect DMZ_ALLOW out
+exit
+
+no ip access-list extended ADMIN_NO_INET
+ip access-list extended ADMIN_NO_INET
+permit udp any any eq 520
+permit tcp any  172.1.1.0 0.0.0.255 eq 80
+permit udp any 172.1.1.0 0.0.0.255 eq domain
+permit icmp any any
+exit
+
+interface g0/2
+ip access-group ADMIN_NO_INET in
+exit
+
+ip inspect name ADMIN_ALLOW tcp
+ip inspect name ADMIN_ALLOW udp
+ip inspect name ADMIN_ALLOW http
+ip inspect name ADMIN_ALLOW icmp
+
+interface g0/2
+ip inspect ADMIN_ALLOW out
+exit
+
+no ip access-list extended NO_SSH_TELNET
+ip access-list extended NO_SSH_TELNET
+permit udp any any eq 520
+deny tcp any 192.168.2.0 0.0.0.255 eq 22
+deny tcp any 192.168.2.0 0.0.0.255 eq 23
+permit tcp any any
+permit udp any any
+permit icmp any any
+exit
+
+interface g0/1
+ip access-group NO_SSH_TELNET in
+exit
+
+ip inspect name CLIENT_ALLOW tcp
+ip inspect name CLIENT_ALLOW udp
+ip inspect name CLIENT_ALLOW http
+ip inspect name CLIENT_ALLOW icmp
+
+interface g0/1
+ip inspect CLIENT_ALLOW out
+exit
