@@ -1,3 +1,9 @@
+1.
+-interne Bedrohungen
+-Angriffe im freigegebenen Netzverkehr z.B. getunnelt
+-Schwachstellen in der Firewall Software 
+
+2.
 b)
 Nummer		NIC				IP-Source			IP destinaion			protocol					Source Port			Destination Port				Ack				Action
 1					1					extern					FTP-Server				 TCP						>1023						 21										any				permit
