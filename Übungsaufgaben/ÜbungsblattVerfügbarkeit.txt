@@ -1,0 +1,50 @@
+2.
+a)
+MTBF = meant time before failure  MTTR = mean time to repair
+V = (MTBF / MTBF + MTTR) >= 0,9999
+	= MTBF >= (MTBF + MTTR) * 0,9999
+	= 0,001 * MTBF >= 0.9999 * MTTR
+	= 0,001 * MTBF / 0.9999 >= MTTR
+	= ca. 1,75 std >= MTTR
+b)
+365 * 0,01 = 3,56 Tage/Jahr
+7 * 24 * 0,01 = 1,68 std/Woche
+24 * 0,01 = 0,24 std ca. 15 min
+c)
+Verfügbarkeit macht keine Aussage über Häufigkeit von Ausfällen
+
+3.
+Sohn vier pro Woche 
+Vater vier pro Monat
+Großvater ein pro Monat
+4 Söhne + 4 Väter + 6 Großväter  = 14 Datensätze
+
+4.
+logisches UND = Multiplikation der Wahrscheinlichkeiten
+Ausfallzeit = 356 Tage * (1 - V)
+VStrinping = V³
+a)
+V = 364 / 367 
+Ausfallzeit = 365(1-364/367) ca. 2,98 Tage
+DownTimestrip= 8,878 Tage
+DownTimeSpiegelung = 35 Minuten
+ARaid5 = 1,75 std
+b)
+Striping über drei Platten
+V = 346 / 364,5
+Ausfallzeit = ca 0,5 Tage 	
+DownTimestrip = 1,5 Tage
+DownTimeSpiegelung = 1 Minute;
+ARaid5 = ca. 3 min
+c)
+Striping über zwei Platten
+ASpiegelung = A² = (1 - V)²
+VSpiegelung = 1- ASpiegelung = 1 - (1 - V)²
+d)
+RAID5 
+P(2 oder 3 Platten fallen aus) = A³ (Alle drei fallen aus) + 3 * A² * V (zwei fallen aus und eine funktioniert)  = ARaid5
+VerfügbarkeitRAID5 mit N Platten = V^N  + N * (1-V) * V^(N-1) 
+allgemeine Formel 1 = Summe k = 0 bis N (n über k) * v^k * (1-V)^(N-k)  
+
+
+

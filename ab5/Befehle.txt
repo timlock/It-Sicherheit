@@ -5,7 +5,7 @@ no ip access-list extended INET_IN
 ip access-list extended INET_IN
 permit udp any any eq 520
 permit tcp any  any eq 443
-permit udp any any eq domain
+!permit udp any any eq domain darf nicht! 
 exit
 
 interface g0/0
@@ -16,6 +16,8 @@ ip inspect name INET_ALLOW tcp
 ip inspect name INET_ALLOW udp
 ip inspect name INET_ALLOW http
 ip inspect name INET_ALLOW icmp
+!alternative
+!ip inspect name INET_ALLOW ip
 
 interface g0/0
 ip inspect INET_ALLOW out
@@ -69,6 +71,7 @@ deny tcp any 192.168.2.0 0.0.0.255 eq 23
 permit tcp any any
 permit udp any any
 permit icmp any any
+!alternative permit ip any any
 exit
 
 interface g0/1
