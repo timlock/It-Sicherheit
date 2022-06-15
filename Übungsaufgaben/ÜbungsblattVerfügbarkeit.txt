@@ -46,5 +46,49 @@ P(2 oder 3 Platten fallen aus) = A³ (Alle drei fallen aus) + 3 * A² * V (zwei 
 VerfügbarkeitRAID5 mit N Platten = V^N  + N * (1-V) * V^(N-1) 
 allgemeine Formel 1 = Summe k = 0 bis N (n über k) * v^k * (1-V)^(N-k)  
 
+5.
+a)
+Verfügbarkeit a = VPF * VFW = (1-APF) * (1 - APW) 
+Aa = 1-Va = 1- (1-APF) * (1 - APW) = 1,495% = 0,01495
+b)
+A b= Aa² = 0,022% Vb = 99,977%
+c)
+Ausfall wenn beide PF oder beide FW ausfallen
+(invertieren um oder durch und  zu ersetzen )Verfügbar genau dann wenn nicht beide PF fallen und nicht beide FW fallen aus
+Vc = (1 - APF²) * (1 - AFW²)
+Ac = 1 - Vc = 1-(1-APF²) * (1 - AFW²) = 0,0125% Vc = 99,9875
+d)
+Nein, da die Gründe für einen Ausfall beide Module betreffen können z.B. ein Brand
 
+Oranisation
 
+1.
+a)
+A A A 
+2. A = Autorisierung nicht einschränkbar, daraus folgt dass das erste und dritte A besonders gesichert werden müssen
+1. A Authentication = 2FA
+3. A Acounting = Protokollierung der ausgeführten Befehle
+Verschlüsselte Übertragung über das Internet
+Vertrag mit Fernwartungsfirma 
+	- Datenschutzverpflichtung Mitarbeiter 
+	- Vertraulicher Umgang mit Daten
+	- kein kopieren vertraulicher Daten vom System
+besonders sicher
+	- Fernwartungszugang zeitlich begrenzen
+	- Live Überwachung durch eigenen Mitarbeiter
+Verantwortlichen benennen
+b)
+1. Dokumentation
+	- Gibt es ein Konzept in dem die Sicherheitsanforderungen aus a) Dokumentiert sind
+	- Erfüllt der Vertrag die entsprechenden Anforderungen aus a)
+2. Umsetzung der Dokumentation (Audits)
+Verantwortlichen fragen 
+	- wie ist 2FA umgesetzt 
+	- Protokoll der letzten Sitzung
+	- Vertrag zeigen lassen
+	- wie erfolgt Verschlüsselung
+3. Prüfung der Wirksamkeit
+	- MItarbeiter des Fernwarters fragen ob auf Datenschutzverpflichtung?
+	- Anforderungen aus Vertrag bekannt?
+	- Daten im Internet abhören und auf Verschlüsselung prüfen
+	- Versuchen aus dem Internet ins System einzudringen
