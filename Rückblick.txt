@@ -1,0 +1,21 @@
+Fail Safe/Secure
+	- HMAC
+	- Default deny in ACLs
+	- Mehrstufige Firewallsysteme
+	- 2FA
+	- Datensicherung/ RAID5
+	- TLS Schlüsselableitung
+	- Notfallvorsorge
+Aktualisierung
+	- TLS-Versionen
+	- Krypto Schlüssellängen
+	- Krypto Verfahren
+	- Schwachstellenscans
+	- Patches -> SVM
+	- Antivirensoftware
+Kappselung Sicherheitsrelevanter Funktionen
+	- Teilnetzbildung/DMZ
+	- Firewallsystem Web Application Firewall
+	- Owner Prinzip
+	- SIM-Karte
+	- TPM
