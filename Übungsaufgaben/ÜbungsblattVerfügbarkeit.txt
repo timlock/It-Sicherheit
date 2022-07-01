@@ -22,7 +22,7 @@ Großvater ein pro Monat
 4.
 logisches UND = Multiplikation der Wahrscheinlichkeiten
 Ausfallzeit = 356 Tage * (1 - V)
-VStrinping = V³
+VStriping = V³
 a)
 V = 364 / 367 
 Ausfallzeit = 365(1-364/367) ca. 2,98 Tage

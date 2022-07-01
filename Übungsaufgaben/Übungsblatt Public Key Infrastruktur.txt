@@ -22,5 +22,5 @@ b) Angriff: Keyloger liest PIN bei PC-Eingabe mit , Angreifer könnte mit PIN ü
 	Vortel: sichere PIN Eingabe
 c) Angriff: Daten werden nach Anzeige auf PC vor Übertragung and die Chipkarte durch Schadsoftware manipuliert 
 	Vorteil: Sichere Anzeigekomponente
-	Idee Hashwert auf PC mit Chipkarten leser abgleichen -> unsicher, Schadsoftware könnte auf PC angezeigten Hashwert schon manipiliert haben
+	Idee Hashwert auf PC mit Chipkarten leser abgleichen -> unsicher, Schadsoftware könnte auf PC angezeigten Hashwert schon mannipuliert haben
 	
